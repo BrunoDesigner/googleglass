@@ -1,0 +1,108 @@
+<!DOCTYPE>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"/>
+    <title> Tudo Sobre Google Glass</title>
+    <link rel="stylesheet"  href="_css/estilo.css"/>
+    <link rel="stylesheet" href="_css/form.css"/>
+</head>
+<script language="JavaScript" src="_javascript/funcoes.js"></script>
+<script>
+    function calc_total() {
+        var qtd = parseInt(document.getElementById('cQtd').value )
+        tot = qtd * 1500;
+        document.getElementById('cTot').value = tot;
+    }
+</script>
+<body>
+<div id="interface">
+
+    <header id="cabecalho">
+
+        <hgroup>
+            <h1>Google Glass</h1>
+            <h2>A revolução do Google está chegando</h2>
+        </hgroup>
+        <figure>
+            <img id="icone" src="_imagens/glass-oculos-preto-peq.png"/>
+        </figure>
+
+        <nav id="menu">
+            <h1>Menu Principal</h1>
+            <ul type="circle">
+                <li onmouseover="mudaFoto('_imagens/home.png')" onmouseout="mudaFoto('_imagens/contato.png')" ><a href="index.html">Home</a></li>
+                <li onmouseover="mudaFoto('_imagens/especificacoes.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="specs.html">Especificações</a></li>
+                <li onmouseover="mudaFoto('_imagens/fotos.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="fotos.html">Fotos</a></li>
+                <li onmouseover="mudaFoto('_imagens/multimidia.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="multimidia.html">Multimídia</a></li>
+                <li onmouseover="mudaFoto('_imagens/contato.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="fale-conosco.html">Fale conosco</a></li>
+            </ul>
+        </nav>
+    </header>
+    <form method="post" id="fContato" action="mailto:brunotroia4@gmail.com" oninput="calc_total();">
+        
+
+        <fieldset id="usuario"><legend>Identificação do Usuário</legend>
+            <p><label for="cNome">Nome:</label><input type="text" name="tNome" id="cNome" size="20" maxlength="30" placeholder="Nome Completo" /></p>
+            <p><label for="cSenha">Senha:</label><input type="password" nome="tSenha" id="cSenha" size="8" maxlength="8" placeholder="8 Digitos"/></p>
+            <p><label for="cEmail">E-mail:</label><input type="email" nome="tEmail" id="cEmail" size="20" maxlength="40" placeholder="E-mail"></p>
+            <fieldset id="sexo"><legend>Sexo:</legend>
+                <input type="radio" name="tSexo" id="cMasculino" checked/> <label for="cMasculino">Masculino</label><br>
+                <input type="radio" name="tSexo" id="cFeminino"/><label for="cFeminino">Feminino</label>
+            </fieldset>
+            <p><label for="cData">Data de Nascimento:<input type="date" nome="tData" id="cData"></label></>
+        </fieldset>
+
+        <fieldset id="endereco"><legend>Endereço do Usuário</legend>
+            <p><label for="cRua"> Logradouro:</label> <input type="text" name="tRua" id="cRua" size="20" maxlength="80" placeholder="Rua,Av,Travesa..." /></p>
+            <p><label for="cNumero">Número:</label> <input type="number" name="tNumero" id="cNumero" min="0" max="9999" /></p>
+            <p><label for="cEst">Estado:</label>
+                <select name="tEst" id="cEst" >
+                    <optgroup label="Região Sudeste">
+                         <option value="RJ">Rio de Janeiro</option>
+                         <option value="SP">São Paulo</option>
+                         <option value="Go">Goias</option>
+                    </optgroup>
+
+                    <optgroup label="Regiao Sul">
+                        <option value="MG">Minas Gerais</option>
+                        <option value="SC">Santa Catarina</option>
+                        <option selected value="TD">Tao Distante</option>
+                    </optgroup>
+                </select>
+            </p>
+            <p><label for="cCidade">Cidade:</label> <input type="text" name="tCidade" id="cCidade" maxlength="40" size="20" placeholder="Sua Cidade" list="cidades"></p>
+            <datalist id="cidades" >
+                <option>Luziâznia</option>
+                <option>Taozinho</option>
+                <option>Beira Rio</option>
+            </datalist>
+        </fieldset>
+
+        <fieldset id="mensagem"><legend>Mensagem do Usuário</legend>
+            <p><label for="cUrg">Grau de Urgência:</label> min <input type="range" name="tUrg" id="cUrg" min="0" max="10" step="2"> max</p>
+            <p><label for="cMsg">Mensagem:</label>
+                <textarea name="tMsg" id="cMsg" cols="35" rows="5" placeholder="Sua Mensagem aqui.">
+
+                </textarea></p>
+        </fieldset>
+
+        <fieldset id="pedido"><legend>Quero um Google Glass</legend>
+            <p><input type="checkbox" name="tPed" id="cPed" checked />
+                <label for="cPed">Gostaria de adquirir um Google Glass quando disponível</label></p>
+            <p><label for="cCor">Cor:</label><input type="color" name="tCor" id="cCor" value="#241c63"/></p>
+            <p><label for="cQtd">Quantidade:</label><input type="number" name="tQtd" id="cQtd" min="0" max="5"> </p>
+            <p><label for="cTot">Preço Total: R$</label> <input type="text" name="tTot" id="cTot" placeholder="Valor Total" readonly /></p>
+            <input type="image"  src="_imagens/botao-enviar.png" name="tBotao"/>
+        </fieldset>
+
+
+    </form>
+    <footer id="roda-pe">
+        <p>Copyright 2013 - by Bruno Souza<br/>
+            <a href="https://www.facebook.com/brunosouzalima.souzalima" target="_blank">Facebook</a> | Twitter</p>
+    </footer>
+
+</div>
+</body>
+</html>
+</html>
